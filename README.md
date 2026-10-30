@@ -25,7 +25,6 @@ Este proyecto implementa una experiencia clásica de Snake en navegador con:
 - Ranking de mejores puntuaciones
 - Backend en Node.js con Express
 - Persistencia de resultados en MongoDB
-- Audio generado en tiempo real con la Web Audio API
 
 ## Objetivo
 
@@ -54,7 +53,6 @@ La aplicación está compuesta por tres vistas principales:
 ## Stack tecnológico
 
 - Frontend: HTML5, CSS3, JavaScript ES6+
-- Audio: Web Audio API
 - Backend: Node.js + Express
 - Base de datos: MongoDB con Mongoose
 
