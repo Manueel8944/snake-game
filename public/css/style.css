@@ -1,0 +1,272 @@
+/* ==========================================================================
+   style.css — Estilos globales compartidos por todas las páginas
+   ========================================================================== */
+
+:root {
+  /* Colores base */
+  --color-bg: #e9efe1;
+  --color-surface: #f7faf2;
+  --color-ink: #14261c;
+  --color-ink-soft: #4a5d51;
+  --color-line: #cbd8c0;
+  --color-grid: rgba(20, 38, 28, 0.07);
+
+  /* Tablero (zona de juego) */
+  --color-board: #14261c;
+  --color-board-line: #223f2f;
+
+  /* Acciones y estados */
+  --color-primary: #1f7a43;
+  --color-primary-hover: #186236;
+  --color-primary-shadow: #0f4a27;
+  --color-on-primary: #ffffff;
+  --color-accent: #e5484d;
+  --color-focus: #14261c;
+
+  /* Tipografía */
+  --font-sans:
+    ui-rounded, "SF Pro Rounded", "Nunito", system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+
+  --font-size-xs: 0.8125rem;
+  --font-size-sm: 0.9375rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-hero: clamp(3rem, 12vw, 4.5rem);
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 800;
+
+  --line-height-tight: 1.05;
+  --line-height-base: 1.55;
+
+  /* Espaciado */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* Bordes y sombras */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --border-width: 2px;
+
+  --shadow-card:
+    0 1px 2px rgba(20, 38, 28, 0.06), 0 12px 32px -8px rgba(20, 38, 28, 0.18);
+
+  /* Movimiento */
+  --transition-fast: 120ms ease;
+
+  /* Rejilla del fondo (misma idea que el tablero del juego) */
+  --grid-size: 28px;
+
+  /* Layout */
+  --container-width: 72rem;
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---------- Base ---------- */
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-base);
+  color: var(--color-ink);
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(var(--color-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+.back-link {
+  color: var(--color-ink-soft);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--color-primary);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* ---------- Utilidades ---------- */
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Botones ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-md);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+/* Botón principal: tecla física que se hunde al pulsar */
+.btn-primary {
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
+  box-shadow: 0 4px 0 var(--color-primary-shadow);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-primary:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--color-primary-shadow);
+}
+
+.btn-ghost {
+  color: var(--color-ink);
+  background-color: transparent;
+  border-color: var(--color-line);
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-ink);
+  background-color: var(--color-surface);
+}
+
+.btn-lg {
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--font-size-lg);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* ---------- Formularios ---------- */
+
+.field-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-line);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.input::placeholder {
+  color: var(--color-ink-soft);
+  opacity: 0.6;
+}
+
+.input:hover {
+  border-color: var(--color-ink-soft);
+}
+
+.input:focus-visible {
+  border-color: var(--color-ink);
+  outline-offset: 2px;
+}
+
+.hint {
+  margin-top: var(--space-2);
+  font-size: var(--font-size-xs);
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Accesibilidad: movimiento reducido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snake</title>
+    <meta
+      name="description"
+      content="Juega al Snake clásico, come manzanas y consigue entrar en el top 10."
+    />
+    <link rel="icon" href="../assets/snake-head.svg" type="image/svg+xml" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+
+  <body>
+    <main class="home">
+      <section class="home-card">
+        <!-- Tablero decorativo -->
+        <div class="board">
+          <div class="board-snake">
+            <img class="board-cell" src="../assets/snake-body.svg" alt="" />
+            <img class="board-cell" src="../assets/snake-body.svg" alt="" />
+            <img class="board-cell" src="../assets/snake-body.svg" alt="" />
+            <img
+              class="board-cell board-head"
+              src="../assets/snake-head.svg"
+              alt=""
+            />
+          </div>
+          <img
+            class="board-apple board-cell"
+            src="../assets/apple.svg"
+            alt=""
+          />
+        </div>
+
+        <div class="home-card-content">
+          <h1 class="home-title">Snake</h1>
+          <p class="home-subtitle">
+            Come manzanas, crece sin chocar y llega al top 10.
+          </p>
+
+          <!-- Sin JS envía el nombre por URL; main.js podrá gestionarlo después -->
+          <form
+            id="player-form"
+            class="player-form"
+            action="game.html"
+            method="get"
+          >
+            <div>
+              <label class="field-label" for="playerName">Tu nombre</label>
+              <input
+                class="input"
+                id="playerName"
+                name="playerName"
+                type="text"
+                maxlength="15"
+                autocomplete="nickname"
+                placeholder="Jugador"
+              />
+              <p class="hint">
+                Hasta 15 caracteres. Si lo dejas vacío serás «Jugador».
+              </p>
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">
+              Jugar
+            </button>
+          </form>
+
+          <a class="btn btn-ghost btn-block" href="leaderboard.html">
+            Ver clasificación
+          </a>
+
+          <p class="controls-hint">Muévete con las flechas o con WASD.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

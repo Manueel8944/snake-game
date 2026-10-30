@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Juega al Snake clásico." />
+    <title>Snake — Partida</title>
+    <link rel="icon" href="../assets/snake-head.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/game.css" />
+    <script src="../js/game.js" defer></script>
+  </head>
+  <body>
+    <main class="game-page">
+      <header class="game-header">
+        <a class="back-link" href="index.html">← Menú</a>
+        <div class="game-heading">
+          <p class="eyebrow">EL JUEGO CLÁSICO</p>
+          <h1 class="game-title">Snake</h1>
+          <p class="game-subtitle">Come manzanas. ¡No choques!</p>
+        </div>
+        <span class="player-badge" id="player-label">Jugador</span>
+      </header>
+
+      <section class="game-card">
+        <div class="stats" aria-live="polite">
+          <div class="stat">
+            <span class="stat-label">PUNTUACIÓN</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">RÉCORD</span>
+            <strong id="best-score">0</strong>
+          </div>
+          <div class="stat">
+            <span class="stat-label">TIEMPO</span>
+            <strong id="time">00:00</strong>
+          </div>
+        </div>
+
+        <div class="canvas-wrap">
+          <canvas id="game-canvas" width="560" height="560">
+            Tu navegador no admite Canvas.
+          </canvas>
+          <div class="game-overlay" id="game-overlay">
+            <div class="overlay-card">
+              <p class="overlay-kicker" id="overlay-kicker">PREPARADO</p>
+              <h2 id="overlay-title">¿Listo para jugar?</h2>
+              <button
+                class="btn btn-primary btn-lg"
+                id="overlay-button"
+                type="button"
+              >
+                Empezar partida
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p class="controls-note">
+          Muévete con las flechas o con
+          <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>
+        </p>
+      </section>
+
+      <p class="save-status" id="save-status" role="status"></p>
+    </main>
+  </body>
+</html>

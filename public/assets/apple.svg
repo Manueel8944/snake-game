@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40">
+  <!-- Sombra -->
+  <ellipse cx="50" cy="85" rx="30" ry="8" fill="rgba(0,0,0,0.2)" />
+  <!-- Cuerpo Manzana -->
+  <path d="M50,25 C30,10 10,35 20,65 C28,88 45,90 50,82 C55,90 72,88 80,65 C90,35 70,10 50,25 Z" fill="#E53935" />
+  <!-- Brillo/Reflejo -->
+  <path d="M30,35 C25,45 25,60 30,65" stroke="#FF8A80" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6" />
+  <!-- Tallo -->
+  <path d="M50,25 Q55,15 60,10" stroke="#5D4037" stroke-width="5" stroke-linecap="round" fill="none" />
+  <!-- Hoja -->
+  <path d="M52,18 C60,12 70,15 68,22 C60,25 52,22 52,18 Z" fill="#4CAF50" />
+</svg>

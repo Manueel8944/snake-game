@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Clasificación de las mejores partidas de Snake."
+    />
+    <title>Snake — Clasificación</title>
+    <link rel="icon" href="../assets/snake-head.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/leaderboard.css" />
+    <script src="../js/leaderboard.js" defer></script>
+  </head>
+  <body>
+    <main class="leaderboard-page">
+      <header class="leaderboard-header">
+        <a class="back-link" href="index.html">← Menú</a>
+        <div>
+          <p class="leaderboard-eyebrow">RÉCORDS DEL SERVIDOR</p>
+          <h1>Clasificación</h1>
+        </div>
+        <button
+          class="btn btn-ghost leaderboard-refresh"
+          id="refresh-scores"
+          type="button"
+          title="Actualizar clasificación"
+        >
+          <span>↻</span>
+        </button>
+      </header>
+
+      <p
+        class="leaderboard-status"
+        id="leaderboard-status"
+        role="status"
+        aria-live="polite"
+      >
+        Cargando puntuaciones…
+      </p>
+      <div class="leaderboard-table-wrap">
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Jugador</th>
+              <th scope="col">Puntuación</th>
+              <th scope="col">Tiempo</th>
+              <th scope="col">Fecha</th>
+            </tr>
+          </thead>
+          <tbody id="score-rows"></tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

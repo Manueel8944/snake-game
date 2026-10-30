@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40">
+  <!-- Cabeza suave -->
+  <rect x="10" y="10" width="80" height="80" rx="35" fill="#4CAF50" />
+  <!-- Ojo Izquierdo -->
+  <circle cx="35" cy="30" r="10" fill="white" />
+  <circle cx="35" cy="28" r="5" fill="black" />
+  <circle cx="37" cy="26" r="2" fill="white" /> <!-- Brillo del ojo -->
+  <!-- Ojo Derecho -->
+  <circle cx="65" cy="30" r="10" fill="white" />
+  <circle cx="65" cy="28" r="5" fill="black" />
+  <circle cx="67" cy="26" r="2" fill="white" /> <!-- Brillo del ojo -->
+  <!-- Lengua -->
+  <path d="M50,85 L50,98 M50,98 L43,105 M50,98 L57,105" stroke="#E53935" stroke-width="4" stroke-linecap="round" fill="none" />
+</svg>

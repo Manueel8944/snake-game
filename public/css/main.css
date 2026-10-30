@@ -1,0 +1,123 @@
+/* ==========================================================================
+   main.css — Estilos de la página de inicio (index.html)
+   Depende de las variables definidas en style.css
+   ========================================================================== */
+
+.home {
+  --cell: 36px;
+
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--space-5) var(--space-4);
+}
+
+/* ---------- Tarjeta principal ---------- */
+
+.home-card {
+  width: 100%;
+  max-width: 26rem;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.home-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-5) var(--space-5);
+}
+
+/* ---------- Tablero decorativo ---------- */
+
+.board {
+  position: relative;
+  height: calc(var(--cell) * 3);
+  overflow: hidden;
+  background-color: var(--color-board);
+  background-image:
+    linear-gradient(var(--color-board-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-board-line) 1px, transparent 1px);
+  background-size: var(--cell) var(--cell);
+}
+
+/* La serpiente ocupa las celdas 2 a 5 de la fila central */
+.board-snake {
+  position: absolute;
+  top: var(--cell);
+  left: calc(var(--cell) * 2);
+  display: flex;
+  animation: slide-in 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* La manzana espera en la celda 8 */
+.board-apple {
+  position: absolute;
+  top: var(--cell);
+  left: calc(var(--cell) * 8);
+}
+
+.board-cell {
+  width: var(--cell);
+  height: var(--cell);
+}
+
+/* El SVG de la cabeza apunta hacia abajo: lo giramos para que mire a la derecha */
+.board-head {
+  transform: rotate(-90deg);
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(calc(var(--cell) * -7));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ---------- Texto ---------- */
+
+.home-title {
+  font-size: var(--font-size-hero);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.04em;
+}
+
+.home-subtitle {
+  max-width: 35ch;
+  margin-top: calc(var(--space-2) * -1);
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Formulario ---------- */
+
+.player-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.controls-hint {
+  font-size: var(--font-size-xs);
+  text-align: center;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Móvil pequeño ---------- */
+
+@media (max-width: 400px) {
+  .home {
+    --cell: 32px;
+  }
+
+  .home-card-content {
+    padding-inline: var(--space-4);
+  }
+}
